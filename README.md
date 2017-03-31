@@ -27,4 +27,4 @@ Just select the `Duplicate` option from a collection index page.
 *Help*
 ==
 
-This could be much smarted - it isn't translatable, the JavaScript to insert the button could be smarted (maybe using Vue?) and the naming for copies could be smarted too - if you want to help please create a pull request!
+This could be much smarter - it isn't translatable, the JavaScript to insert the button could be smarter (maybe using Vue?) and the naming for copies could be smarter too - if you want to help please create a pull request!
