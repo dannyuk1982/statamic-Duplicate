@@ -14,8 +14,6 @@ class DuplicateEntryController extends Controller
      *
      * @return Illuminate\Http\Response
      */
-    public function index()
-    {}
 
     public function duplicate( $collection, $slug )
     {
@@ -61,6 +59,9 @@ class DuplicateEntryController extends Controller
 
     }
 
+    // This should be smarter and consider the names of other entries, and not just the one being
+    // duplicated, i.e. if the entry is called `My Entry (copy)`, it should check to see if there is
+    // already an entry called `My Entry (copy 2)` before blindy calling the duplicated entry this. 
     private function getTitle( $title )
     {
 

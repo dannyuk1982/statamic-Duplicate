@@ -20,7 +20,7 @@ class DuplicateEntryListener extends Listener
     public function js()
     {
 
-      return $this->js->tag('addButtons');
+      return $this->js->tag('addButtons.min');
 
     }
 }
