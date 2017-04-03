@@ -1,6 +1,6 @@
 *Statamic Duplicate*
 ==
-Written by Danny Richardson for [Pixel Primate](http://www.pixelprimate.com), V1.5
+Written by Danny Richardson for [Pixel Primate](http://www.pixelprimate.com), V1.5.1
 
 > Licensed under the [MIT licence](https://opensource.org/licenses/MIT)
 >
