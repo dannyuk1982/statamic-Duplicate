@@ -2,5 +2,6 @@
 
 return [
     'duplicate' => 'Duplicate',
-    'success' => 'The entry ":title" has been duplicated'
+    'success' => 'The entry ":title" has been duplicated',
+    'copy' => 'Copy'
 ];

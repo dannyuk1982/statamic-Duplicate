@@ -2,5 +2,6 @@
 
 return [
     'duplicate' => 'Dupliceren',
-    'success' => 'De inhoud ":title" is gedupliceerd.'
+    'success' => 'De inhoud ":title" is gedupliceerd.',
+    'copy' => 'Kopie'
 ];
