@@ -1,3 +1,4 @@
 routes:
   /: index
-  /{collection}/{slug}: duplicate
+  /entry/{collection}/{slug}: duplicateEntry
+  /page/{id}: duplicatePage

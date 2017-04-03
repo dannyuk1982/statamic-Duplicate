@@ -1,10 +1,10 @@
 <?php
 
-namespace Statamic\Addons\DuplicateEntry;
+namespace Statamic\Addons\Duplicate;
 
 use Statamic\Extend\Listener;
 
-class DuplicateEntryListener extends Listener
+class DuplicateListener extends Listener
 {
     /**
      * The events to be listened for, and the methods to call.

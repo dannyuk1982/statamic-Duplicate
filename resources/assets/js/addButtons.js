@@ -1,12 +1,15 @@
+/* global Statamic, translate */
+/* jshint devel:true */
+
 // Injects a 'Duplicate' button to the DOM
 var addButtons = function( delay ) {
   ( function( $ ) {
 
     // label to use for the duplicate button - should be translatable really
-    var label = translate('addons.DuplicateEntry::settings.duplicate');
+    var label = translate('addons.Duplicate::settings.duplicate');
    
     // only continue if we are on an entries index page
-    if( location.href.indexOf( 'collections/entries' ) !== -1 ) {
+    if( location.pathname.match( /^.+\/collections\/entries\/.+$/ ) ) {
 
       // get the collection
       var collection = location.pathname.split('/');
@@ -26,8 +29,50 @@ var addButtons = function( delay ) {
             .html()
             .trim();
 
-          // get the link to the DuplicateEntry controller function
-          var href = '/cp/addons/duplicateentry/' + collection + '/' + slug;
+          // get the link to the Duplicate controller function
+          var href = Statamic.cpRoot + '/addons/duplicate/entry/' + collection + '/' + slug;
+
+          // create an element to add
+          var li = $('<li><a href="' + href + '">' + label + '</a></li>');
+
+          // add to the DOM
+          $(this).children('li').eq(0).after( li );
+
+        });
+
+      // delay will be 0 if the browser supports XMLHttpRequest, otherwise an arbitrary period to wait
+      }, delay ); 
+
+    }
+
+    // only continue if we are on the `pages` index page
+     if( location.pathname.match( /^.+\/pages$/ ) ) {
+    
+
+      // We need to run this code after everything else has finished executing, 
+      // so call via an anonymous function, with setTimeout
+      window.setTimeout( function() {
+
+        $('ul.dropdown-menu').each( function() {
+
+          //get the folder and slug from the DOM
+         var page_url = $(this)
+            .parents('div.page-actions')
+            .children('a.page-action')
+            .attr('href');
+
+          //if it's the homepage - we shouldn't duplicate this
+          if( page_url === '/' ) {
+            return;
+          }
+ 
+          //get the id, via some kind of Jason magic - ancient secrets, lost in the streams of time
+          var id = $(this)
+            .parents('li.branch')[0]
+            .__vue__.uuid;
+
+          // get the link to the Duplicate controller function
+          var href = Statamic.cpRoot + '/addons/duplicate/page/' + id;
 
           // create an element to add
           var li = $('<li><a href="' + href + '">' + label + '</a></li>');
@@ -56,8 +101,11 @@ if( typeof XMLHttpRequest.prototype.open ===  'function' ) {
 
           this.addEventListener( 'load', function() {
 
+              //only call `addButtons` on the entry index and pages pages.
+              var re = new RegExp( Statamic.cpRoot + '\/(collections\/entries\/.+|pages)\/get' );
+
               // if we've just loaded some entries, then inject the `duplicate` buttons
-              if( method.toUpperCase() === 'GET' && url.indexOf( '/get?' ) !== -1 ) {
+              if( method.toUpperCase() === 'GET' && url.match( re ) ) {
 
                 // Pass `jQuery` to the function, to be used as `$`. The second parameter,
                 // `delay`, will be 0 – as this will only be ran after the entries have loaded

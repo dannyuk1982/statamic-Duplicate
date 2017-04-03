@@ -1,6 +1,6 @@
-*Statamic Duplicate Entry*
+*Statamic Duplicate*
 ==
-Written by Danny Richardson for [Pixel Primate](http://www.pixelprimate.com), V1.0
+Written by Danny Richardson for [Pixel Primate](http://www.pixelprimate.com), V1.5
 
 > Licensed under the [MIT licence](https://opensource.org/licenses/MIT)
 >
@@ -15,18 +15,28 @@ Written by Danny Richardson for [Pixel Primate](http://www.pixelprimate.com), V1
 *Installation*
 ==
 
-Copy the files over to `/site/addons/DuplicateEntry`.
+Copy the files over to `/site/addons/Duplicate`.
 
 
 *Usage*
 ==
 
-Just select the `Duplicate` option from a collection index page. 
+Just select the `Duplicate` option from a collection index page or the pages.. er, page.
 
 
 *Translations*
 ==
 Now translatable (thanks Rias500!) so also add in a translation for your locale if needed. If you add in any other languages please create a pull request to add them here.
+
+
+*Changelog*
+==
+1.5:
+- Added support for pages also
+- Improved detection as to whether the JavaScript inject code should fire
+- Wrote more sexy comments
+- Guessed at some words in German and Dutch
+- Possibly broke something
 
 
 *Help*

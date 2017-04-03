@@ -2,6 +2,7 @@
 
 return [
     'duplicate' => 'Dupliceren',
-    'success' => 'De inhoud ":title" is gedupliceerd.',
+    'successEntry' => 'De inhoud ":title" is gedupliceerd.',
+    'successPage' => 'De pagina ":title" is gedupliceerd.',
     'copy' => 'Kopie'
 ];
