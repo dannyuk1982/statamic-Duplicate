@@ -21,10 +21,15 @@ Copy the files over to `/site/addons/DuplicateEntry`.
 *Usage*
 ==
 
-Just select the `Duplicate` option from a collection index page.
+Just select the `Duplicate` option from a collection index page. 
+
+
+*Translations*
+==
+Now translatable (thanks Rias500!) so also add in a translation for your locale if needed. If you add in any other languages please create a pull request to add them here.
 
 
 *Help*
 ==
 
-This could be much smarter - it isn't translatable, the alogorithm that names the files could be more intelligent (see comments) - if you want to help please create a pull request!
+This could be much smarter - the alogorithm that names the files could be more intelligent (see comments) - if you want to help please create a pull request!
