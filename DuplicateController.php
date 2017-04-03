@@ -19,6 +19,9 @@ class DuplicateController extends Controller
     public function duplicateEntry( $collection, $slug )
     {
 
+      // stop the haxx0rz
+      $this->authorize('cp:access');
+
       //get the entry to duplicate
       $entry = Entry::whereSlug( $slug, $collection );
 
@@ -63,6 +66,9 @@ class DuplicateController extends Controller
     public function duplicatePage( $id )
     {
 
+      // stop the haxx0rz
+      $this->authorize('cp:access');
+
       // get the page to duplicate
       $page = Page::find( $id );
 
@@ -106,7 +112,7 @@ class DuplicateController extends Controller
     }
     // This should be smarter and consider the names of other entries, and not just the one being
     // duplicated, i.e. if the entry is called `My Entry (copy)`, it should check to see if there is
-    // already an entry called `My Entry (copy 2)` before blindy calling the duplicated entry this. 
+    // already an entry called `My Entry (copy 2)` before blindy calling the duplicated entry this.
     private function getTitle( $title )
     {
       $suffix = $this->trans('settings.copy');

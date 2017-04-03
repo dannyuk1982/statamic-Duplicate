@@ -38,6 +38,8 @@ Now translatable (thanks Rias500!) so also add in a translation for your locale 
 - Guessed at some words in German and Dutch
 - Possibly broke something
 
+1.5.1
+- Added some checks to stop hackers doing hacking stuff, like rigging the US election
 
 *Help*
 ==
