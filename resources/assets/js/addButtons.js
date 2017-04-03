@@ -3,7 +3,7 @@ var addButtons = function( delay ) {
   ( function( $ ) {
 
     // label to use for the duplicate button - should be translatable really
-    var label = 'Duplicate';
+    var label = translate('addons.DuplicateEntry::settings.duplicate');
    
     // only continue if we are on an entries index page
     if( location.href.indexOf( 'collections/entries' ) !== -1 ) {

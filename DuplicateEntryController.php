@@ -55,7 +55,7 @@ class DuplicateEntryController extends Controller
       Stache::update();
 
       //go back to the collection index, with a sucess message
-      return back()->with('success', 'The entry `'.$entry->get( 'title' ).'` has been duplicated');
+      return back()->with('success', trans('addons.DuplicateEntry::settings.success', ['title' => $entry->get('title')]));
 
     }
 
