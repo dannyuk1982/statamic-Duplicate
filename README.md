@@ -1,4 +1,4 @@
-*Statamicbrite*
+*Statamic Duplicate Entry*
 ==
 Written by Danny Richardson for [Pixel Primate](http://www.pixelprimate.com), V1.0
 
