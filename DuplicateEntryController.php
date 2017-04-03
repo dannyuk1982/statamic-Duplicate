@@ -55,7 +55,7 @@ class DuplicateEntryController extends Controller
       Stache::update();
 
       //go back to the collection index, with a sucess message
-      return back()->with('success', $this->trans('settings.success', ['title' => $entry->get('title')]));
+      return back()->with('success', trans('addons.DuplicateEntry::settings.success', ['title' => $entry->get('title')]));
 
     }
 
