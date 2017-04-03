@@ -21,6 +21,7 @@ class DuplicateController extends Controller
 
       // stop the haxx0rz
       $this->authorize('cp:access');
+      $this->authorize('collections:{$collection}:create');
 
       //get the entry to duplicate
       $entry = Entry::whereSlug( $slug, $collection );
@@ -68,6 +69,7 @@ class DuplicateController extends Controller
 
       // stop the haxx0rz
       $this->authorize('cp:access');
+      $this->authorize('pages:create');
 
       // get the page to duplicate
       $page = Page::find( $id );
