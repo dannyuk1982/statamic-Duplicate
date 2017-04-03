@@ -55,7 +55,7 @@ class DuplicateEntryController extends Controller
       Stache::update();
 
       //go back to the collection index, with a sucess message
-      return back()->with('success', 'The entry `'.$entry->get( 'title' ).'` has been duplicated');
+      return back()->with('success', $this->trans('settings.success', ['title' => $entry->get('title')]));
 
     }
 
@@ -64,8 +64,7 @@ class DuplicateEntryController extends Controller
     // already an entry called `My Entry (copy 2)` before blindy calling the duplicated entry this. 
     private function getTitle( $title )
     {
-
-      $suffix = 'copy';
+      $suffix = $this->trans('settings.copy');
 
       //does the title already contain the suffix? if so then increment it to 2
       if( preg_match( "~ \({$suffix}\)$~", $title ) ) {
