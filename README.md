@@ -42,7 +42,7 @@ Now translatable (thanks Rias500 and rrelmy!) so also add in a translation for y
 - Added some checks to stop hackers doing hacking stuff, like rigging the US election
 
 1.5.2
-- Moved logic to detect page from the javascript to the listener, this means that the script only runs on a) the pages index or b) a collection index, this should fix https://github.com/dannyuk1982/statamic-Duplicate/issues/7
+- Moved logic to detect page from the javascript to the listener, this means that the script only runs on a) the pages index or b) a collection index, this should fix [#7](https://github.com/dannyuk1982/statamic-Duplicate/issues/7)
 
 *Help*
 ==
