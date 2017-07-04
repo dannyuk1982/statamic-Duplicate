@@ -117,6 +117,7 @@ class DuplicateController extends Controller
     // already an entry called `My Entry (copy 2)` before blindy calling the duplicated entry this.
     private function getTitle( $title )
     {
+
       $suffix = $this->trans('settings.copy');
 
       // does the title already contain the suffix? if so then increment it to 2

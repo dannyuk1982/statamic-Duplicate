@@ -1,5 +1,5 @@
 /* global Statamic, translate */
-/* jshint devel:true */
+/* jshint devel:false */
 
 // Injects a 'Duplicate' button to the DOM
 var addButtons = function( delay ) {
@@ -46,7 +46,7 @@ var addButtons = function( delay ) {
     }
 
     // only continue if we are on the `pages` index page
-     if( location.pathname.match( /^.+\/pages$/ ) ) {
+    if( location.pathname.match( /^.+\/pages$/ ) ) {
     
 
       // We need to run this code after everything else has finished executing, 
@@ -101,14 +101,10 @@ if( typeof XMLHttpRequest.prototype.open ===  'function' ) {
 
           this.addEventListener( 'load', function() {
 
-              //only call `addButtons` on the entry index and pages pages.
-              var re = new RegExp( Statamic.cpRoot + '\/(collections\/entries\/.+|pages)\/get' );
-
               // if we've just loaded some entries, then inject the `duplicate` buttons
-              if( method.toUpperCase() === 'GET' && url.match( re ) ) {
+              if( method.toUpperCase() === 'GET' ) {
 
-                // Pass `jQuery` to the function, to be used as `$`. The second parameter,
-                // `delay`, will be 0 – as this will only be ran after the entries have loaded
+                // The parameter, `delay`, will be 0 – as this will only be ran after the entries have loaded
                 addButtons( 0 );
               }
 

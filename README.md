@@ -1,6 +1,6 @@
 *Statamic Duplicate*
 ==
-Written by Danny Richardson for [Pixel Primate](http://www.pixelprimate.com), V1.5.1
+Written by Danny Richardson for [Pixel Primate](http://www.pixelprimate.com), V1.5.2
 
 > Licensed under the [MIT licence](https://opensource.org/licenses/MIT)
 >
@@ -26,7 +26,7 @@ Just select the `Duplicate` option from a collection index page or the pages.. e
 
 *Translations*
 ==
-Now translatable (thanks Rias500!) so also add in a translation for your locale if needed. If you add in any other languages please create a pull request to add them here.
+Now translatable (thanks Rias500 and rrelmy!) so also add in a translation for your locale if needed. If you add in any other languages please create a pull request to add them here.
 
 
 *Changelog*
@@ -41,7 +41,14 @@ Now translatable (thanks Rias500!) so also add in a translation for your locale 
 1.5.1
 - Added some checks to stop hackers doing hacking stuff, like rigging the US election
 
+1.5.2
+- Moved logic to detect page from the javascript to the listener, this means that the script only runs on a) the pages index or b) a collection index, this should fix https://github.com/dannyuk1982/statamic-Duplicate/issues/7
+
 *Help*
 ==
 
-This could be much smarter - the alogorithm that names the files could be more intelligent (see comments) - if you want to help please create a pull request!
+This could be much smarter 
+- the alogorithm that names the files could be more intelligent (see comments)
+- the script should listen for, and run after, a Vue event, not the current XHR hijack which is really hacky
+
+If you want to help please create a pull request or contact me!

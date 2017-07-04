@@ -3,6 +3,7 @@
 namespace Statamic\Addons\Duplicate;
 
 use Statamic\Extend\Listener;
+use Statamic\API\URL;
 
 class DuplicateListener extends Listener
 {
@@ -20,7 +21,21 @@ class DuplicateListener extends Listener
     public function js()
     {
 
-      return $this->js->tag('addButtons.min');
+        // get the current URL
+        $current_url = URL::getCurrent();
 
+        // if on a relevant URL then add in the duplicate buttons...
+        if( 
+
+            // on /cp/pages (i.e. the pages index)
+            $current_url === '/'.CP_ROUTE.'/pages' ||
+            
+            // on /cp/collections/entries/* (i.e. the index of any collection)
+            preg_match( '~^/'.CP_ROUTE.'/collections/entries/[^/]+$~' , $current_url )
+
+        ) {
+            return $this->js->tag('addButtons.min');
+        }
+        
     }
 }
